@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRA TECH — Smart Security Solutions in Kenya | CCTV, Electric Fencing, Access Control</title>
+    <meta name="description" content="ASTRA TECH provides professional CCTV installation in Kenya, security systems in Nairobi, electric fence installation, access control systems, and smart security solutions for homes and businesses.">
+    <meta name="keywords" content="CCTV installation Kenya, Security systems Nairobi, Electric fence installation Kenya, Access control systems Kenya, smart security Kenya, intruder alarms Nairobi, biometric security Kenya, video intercom Kenya">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ASTRA TECH — Smart Security Solutions in Kenya">
+    <meta property="og:description" content="Advanced CCTV, access control, alarms, and smart security systems designed to protect homes, businesses, and developments across Kenya.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.astratech.co.ke">
+    <link rel="canonical" href="https://www.astratech.co.ke">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        navy: { 50:'#eef2f7', 100:'#d4dde9', 200:'#a9bbd3', 300:'#7e99bd', 400:'#5377a7', 500:'#2d5a96', 600:'#1e4678', 700:'#0f335a', 800:'#0a2640', 900:'#061a2e', 950:'#030d18' },
+                        electric: { 400:'#60a5fa', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8' },
+                        danger: { 400:'#f87171', 500:'#ef4444', 600:'#dc2626' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes scan-line {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        @keyframes count-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+        .animate-on-scroll.delay-6 { transition-delay: 0.6s; }
+        .animate-on-scroll.delay-7 { transition-delay: 0.7s; }
+
+        .hero-loaded .hero-fade { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .hero-loaded .hero-fade-d1 { animation: fadeInUp 1s 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .hero-loaded .hero-fade-d2 { animation: fadeInUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .hero-loaded .hero-fade-d3 { animation: fadeInUp 1s 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .hero-loaded .hero-fade-d4 { animation: fadeInUp 1s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .hero-loaded .hero-fade-d5 { animation: scaleIn 1.2s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+
+        .scan-overlay::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+            animation: scan-line 3s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .service-card { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.15); }
+        .service-card:hover .service-icon { background: #2563eb; color: white; transform: scale(1.1); }
+        .service-card:hover .service-arrow { transform: translateX(4px); opacity: 1; }
+
+        .service-icon { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-arrow { transition: all 0.3s ease; opacity: 0; }
+
+        .problem-item { transition: all 0.3s ease; }
+        .problem-item:hover { background: rgba(239, 68, 68, 0.05); transform: translateX(4px); }
+
+        .step-connector { position: relative; }
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 4rem;
+            height: 2px;
+            background: linear-gradient(90deg, #2563eb, transparent);
+        }
+        @media (max-width: 768px) {
+            .step-connector::after { display: none; }
+        }
+
+        .whatsapp-float { animation: float 3s ease-in-out infinite; }
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: #25D366;
+            animation: pulse-ring 2s ease-out infinite;
+            z-index: -1;
+        }
+
+        .cta-shimmer {
+            background: linear-gradient(90deg, #2563eb 0%, #60a5fa 50%, #2563eb 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+        .industry-card { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .industry-card:hover { transform: translateY(-6px) scale(1.02); }
+        .industry-card:hover .industry-overlay { opacity: 1; }
+        .industry-overlay { transition: opacity 0.5s ease; }
+
+        .trust-badge { transition: all 0.3s ease; }
+        .trust-badge:hover { transform: scale(1.05); }
+
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .faq-chevron { transition: transform 0.3s ease; }
+        .faq-chevron.rotated { transform: rotate(180deg); }
+
+        .review-card { transition: all 0.5s ease; }
+        .review-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1); }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .mobile-menu { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ASTRA TECH",
+        "description": "Smart security solutions company in Kenya providing CCTV installation, electric fencing, access control, and security systems.",
+        "url": "https://www.astratech.co.ke",
+        "telephone": "+254715135141",
+        "email": "info@astratech.co.ke",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+        },
+        "serviceArea": {
+            "@type": "Country",
+            "name": "Kenya"
+        },
+        "serviceType": ["CCTV Installation", "Electric Fence Installation", "Access Control Systems", "Security Alarms", "Biometric Security", "Video Intercom", "Networking Infrastructure"]
+    }
+    </script>
+</head>
+<body class="bg-white text-navy-900 font-inter overflow-x-hidden">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/80 border-b border-navy-100/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center group-hover:bg-electric-600 transition-colors duration-300">
+                        <iconify-icon icon="lucide:shield-check" class="text-white text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-navy-900">ASTRA</span>
+                        <span class="text-lg font-light tracking-tight text-electric-600">TECH</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#services" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">Services</a>
+                    <a href="#why-us" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">Why Us</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">How It Works</a>
+                    <a href="#industries" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">Industries</a>
+                    <a href="#reviews" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">Reviews</a>
+                    <a href="#faq" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">FAQ</a>
+                    <a href="#contact" class="text-sm font-medium text-navy-600 hover:text-electric-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Desktop CTA -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="tel:0715135141" class="flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-electric-600 transition-colors">
+                        <iconify-icon icon="lucide:phone" class="text-base"></iconify-icon>
+                        0715 135 141
+                    </a>
+                    <a href="#contact" class="bg-electric-600 hover:bg-electric-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-electric-600/25">
+                        Free Assessment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-navy-50 transition-colors" aria-label="Toggle menu">
+                    <iconify-icon id="menuIcon" icon="lucide:menu" class="text-2xl text-navy-900"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu lg:hidden overflow-hidden max-h-0 opacity-0">
+            <div class="px-4 pb-6 pt-2 border-t border-navy-100/50 bg-white">
+                <div class="flex flex-col gap-1">
+                    <a href="#services" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">Services</a>
+                    <a href="#why-us" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">Why Us</a>
+                    <a href="#how-it-works" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">How It Works</a>
+                    <a href="#industries" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">Industries</a>
+                    <a href="#reviews" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">Reviews</a>
+                    <a href="#faq" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">FAQ</a>
+                    <a href="#contact" class="mobile-link py-3 px-3 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-electric-600 rounded-lg transition-colors">Contact</a>
+                </div>
+                <div class="mt-4 flex flex-col gap-3">
+                    <a href="tel:0715135141" class="flex items-center justify-center gap-2 text-sm font-medium text-navy-700 border border-navy-200 py-3 rounded-lg hover:bg-navy-50 transition-colors">
+                        <iconify-icon icon="lucide:phone"></iconify-icon>
+                        0715 135 141
+                    </a>
+                    <a href="#contact" class="flex items-center justify-center gap-2 bg-electric-600 text-white text-sm font-semibold py-3 rounded-lg hover:bg-electric-700 transition-colors">
+                        Get Free Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 bg-navy-950 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/luxuryhome-kenya/1920/1080.jpg" alt="Modern secure property in Kenya" class="w-full h-full object-cover opacity-30" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/40"></div>
+        </div>
+
+        <!-- Scan Line Effect -->
+        <div class="absolute inset-0 scan-overlay pointer-events-none"></div>
+
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div id="heroContent">
+                    <div class="hero-fade inline-flex items-center gap-2 bg-electric-600/10 border border-electric-600/20 text-electric-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                        <iconify-icon icon="lucide:shield-check" class="text-sm"></iconify-icon>
+                        Secure Today. Protect Tomorrow.
+                    </div>
+
+                    <h1 class="hero-fade-d1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.95] tracking-tight mb-6">
+                        SECURE YOUR PROPERTY BEFORE IT BECOMES A
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 to-danger-500"> TARGET.</span>
+                    </h1>
+
+                    <p class="hero-fade-d2 text-lg sm:text-xl text-navy-300 leading-relaxed max-w-xl mb-8">
+                        Advanced CCTV, access control, alarms, and smart security systems designed to protect homes, businesses, and developments across Kenya.
+                    </p>
+
+                    <div class="hero-fade-d3 flex flex-wrap gap-4 mb-10">
+                        <a href="#contact" class="group inline-flex items-center gap-2 bg-electric-600 hover:bg-electric-700 text-white font-semibold px-7 py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-electric-600/30 text-sm sm:text-base">
+                            GET FREE SECURITY ASSESSMENT
+                            <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        </a>
+                        <a href="https://wa.me/254715135141?text=Hello%20Astra%20Tech,%20I%20need%20security%20solutions." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-7 py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/30 text-sm sm:text-base">
+                            <iconify-icon icon="lucide:message-circle" class="text-lg"></iconify-icon>
+                            CHAT ON WHATSAPP
+                        </a>
+                    </div>
+
+                    <div class="hero-fade-d4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="trust-badge flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
+                            <iconify-icon icon="lucide:check-circle-2" class="text-electric-400 text-sm flex-shrink-0"></iconify-icon>
+                            <span class="text-xs text-white/80 font-medium">400+ Projects</span>
+                        </div>
+                        <div class="trust-badge flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
+                            <iconify-icon icon="lucide:check-circle-2" class="text-electric-400 text-sm flex-shrink-0"></iconify-icon>
+                            <span class="text-xs text-white/80 font-medium">500+ Clients</span>
+                        </div>
+                        <div class="trust-badge flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
+                            <iconify-icon icon="lucide:check-circle-2" class="text-electric-400 text-sm flex-shrink-0"></iconify-icon>
+                            <span class="text-xs text-white/80 font-medium">24/7 Solutions</span>
+                        </div>
+                        <div class="trust-badge flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2.5">
+                            <iconify-icon icon="lucide:check-circle-2" class="text-electric-400 text-sm flex-shrink-0"></iconify-icon>
+                            <span class="text-xs text-white/80 font-medium">Pro Install</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Hero Visual -->
+                <div class="hero-fade-d5 hidden lg:block relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/cctv-monitoring-room/800/600.jpg" alt="CCTV monitoring room with multiple screens" class="w-full h-[450px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/20"></div>
+
+                        <!-- Floating Security Badge -->
+                        <div class="absolute top-4 right-4 flex items-center gap-2 bg-navy-900/80 border border-electric-600/30 rounded-lg px-3 py-2 backdrop-blur-md">
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></div>
+                            <span class="text-xs font-semibold text-white">LIVE MONITORING</span>
+                        </div>
+
+                        <!-- Camera Count -->
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                            <div class="flex items-center gap-3 bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 backdrop-blur-md">
+                                <iconify-icon icon="lucide:camera" class="text-electric-400 text-xl"></iconify-icon>
+                                <div>
+                                    <div class="text-white text-sm font-bold">16 Cameras</div>
+                                    <div class="text-white/50 text-xs">All Online</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 backdrop-blur-md">
+                                <iconify-icon icon="lucide:hard-drive" class="text-green-400 text-xl"></iconify-icon>
+                                <div>
+                                    <div class="text-white text-sm font-bold">Recording</div>
+                                    <div class="text-white/50 text-xs">30 Days Storage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-white/50 text-xs tracking-widest uppercase">Scroll</span>
+            <div class="w-5 h-8 border border-white/30 rounded-full flex items-start justify-center p-1">
+                <div class="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-danger-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-danger-500/10 text-danger-500 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:alert-triangle" class="text-sm"></iconify-icon>
+                    The Reality
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-6">
+                    Most Security Failures Happen Before Anyone Takes Action.
+                </h2>
+                <p class="animate-on-scroll delay-2 text-lg text-navy-500 leading-relaxed">
+                    Property owners across Kenya face these critical vulnerabilities every day.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-12">
+                <div class="animate-on-scroll delay-1 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:eye-off" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">Blind Spots</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">Unmonitored areas around your property</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:lock-open" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">Unauthorized Access</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">Anyone can enter without verification</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-3 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:alert-octagon" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">Theft Risks</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">No deterrents or early warning systems</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-4 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:monitor-off" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">No Real-Time Monitoring</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">Can't see what's happening right now</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-5 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:layout-grid" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">Poor Security Planning</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">Systems pieced together without strategy</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-6 problem-item flex items-center gap-4 bg-white border border-navy-100 rounded-xl p-5 cursor-default">
+                    <div class="w-12 h-12 bg-danger-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <iconify-icon icon="lucide:clock" class="text-danger-500 text-xl"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy-900 text-sm">Delayed Response</h3>
+                        <p class="text-xs text-navy-500 mt-0.5">By the time you react, it's too late</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll delay-5 text-center">
+                <div class="inline-flex items-center gap-3 bg-gradient-to-r from-electric-600 to-electric-700 text-white px-8 py-4 rounded-xl shadow-xl shadow-electric-600/20">
+                    <iconify-icon icon="lucide:shield-check" class="text-xl"></iconify-icon>
+                    <span class="font-semibold">Astra Tech gives you complete visibility and control.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 lg:py-28 bg-navy-50/50 relative">
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-electric-600/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-electric-600/10 text-electric-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:settings" class="text-sm"></iconify-icon>
+                    Our Services
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-4">
+                    Complete Security Solutions
+                </h2>
+                <p class="animate-on-scroll delay-2 text-lg text-navy-500 max-w-2xl mx-auto">
+                    From surveillance to perimeter protection, we deliver end-to-end security systems tailored to your needs.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Service 1: CCTV -->
+                <div class="animate-on-scroll delay-1 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:camera" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">CCTV Surveillance</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">High-definition cameras with remote monitoring and intelligent detection.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 2: Electric Fencing -->
+                <div class="animate-on-scroll delay-2 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:zap" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Electric Fencing</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">Powerful perimeter protection that keeps threats away from your property.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 3: Access Control -->
+                <div class="animate-on-scroll delay-3 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:fingerprint" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Access Control</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">Control who enters your premises with smart security systems.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 4: Video Intercom -->
+                <div class="animate-on-scroll delay-4 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:video" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Video Intercom</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">See, communicate, and approve access remotely from anywhere.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 5: Intruder Alarms -->
+                <div class="animate-on-scroll delay-5 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:bell-ring" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Intruder Alarms</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">Instant alerts when unauthorized activity is detected on your premises.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 6: Biometric Security -->
+                <div class="animate-on-scroll delay-6 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:scan-face" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Biometric Security</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">Advanced fingerprint and facial identity verification systems.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Service 7: Networking -->
+                <div class="animate-on-scroll delay-7 service-card bg-white border border-navy-100 rounded-2xl p-6 cursor-pointer group">
+                    <div class="service-icon w-14 h-14 bg-electric-600/10 text-electric-600 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="lucide:network" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 tracking-tight">Networking & Infrastructure</h3>
+                    <p class="text-sm text-navy-500 leading-relaxed mb-4">Reliable network systems that power modern security infrastructure.</p>
+                    <div class="flex items-center gap-1 text-electric-600 text-sm font-medium">
+                        <span>Learn more</span>
+                        <iconify-icon icon="lucide:arrow-right" class="service-arrow text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="animate-on-scroll delay-7 service-card bg-gradient-to-br from-navy-900 to-navy-800 border border-navy-700 rounded-2xl p-6 flex flex-col justify-center items-center text-center cursor-pointer group">
+                    <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-electric-600 transition-colors duration-500">
+                        <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Need Something Custom?</h3>
+                    <p class="text-sm text-navy-300 mb-4">We design bespoke security solutions for unique requirements.</p>
+                    <a href="#contact" class="text-electric-400 text-sm font-medium hover:text-electric-300 transition-colors">Talk to us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ASTRA TECH -->
+    <section id="why-us" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+        <div class="absolute top-1/2 right-0 w-72 h-72 bg-electric-600/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Image -->
+                <div class="animate-on-scroll relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://picsum.photos/seed/security-installation-pro/800/600.jpg" alt="Professional security installation by Astra Tech" class="w-full h-[400px] lg:h-[500px] object-cover">
+                    </div>
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -right-4 sm:right-6 bg-white rounded-xl shadow-xl border border-navy-100 p-5 max-w-[220px]">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <iconify-icon icon="lucide:trending-up" class="text-green-600 text-lg"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-navy-900">98%</div>
+                                <div class="text-xs text-navy-500">Client Satisfaction</div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-navy-100 rounded-full h-1.5">
+                            <div class="bg-green-500 h-1.5 rounded-full" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <!-- Experience Badge -->
+                    <div class="absolute -top-4 -left-4 sm:left-6 bg-electric-600 text-white rounded-xl shadow-xl shadow-electric-600/30 px-5 py-3">
+                        <div class="text-2xl font-bold">400+</div>
+                        <div class="text-xs opacity-80">Projects Done</div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div>
+                    <div class="animate-on-scroll inline-flex items-center gap-2 bg-electric-600/10 text-electric-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                        <iconify-icon icon="lucide:award" class="text-sm"></iconify-icon>
+                        Why Astra Tech
+                    </div>
+                    <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-6">
+                        Security Installed Right.<br>
+                        <span class="text-electric-600">Peace Of Mind Delivered.</span>
+                    </h2>
+                    <p class="animate-on-scroll delay-2 text-lg text-navy-500 leading-relaxed mb-10">
+                        We don't just install equipment — we engineer comprehensive security systems that work together seamlessly to protect what matters most.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="animate-on-scroll delay-2 flex items-start gap-4">
+                            <div class="w-8 h-8 bg-electric-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-navy-900 mb-1">Professional Installation</h3>
+                                <p class="text-sm text-navy-500">Certified technicians ensure every component is installed to the highest standards.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-3 flex items-start gap-4">
+                            <div class="w-8 h-8 bg-electric-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-navy-900 mb-1">Quality Equipment</h3>
+                                <p class="text-sm text-navy-500">We source only proven, reliable security hardware from trusted manufacturers.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-4 flex items-start gap-4">
+                            <div class="w-8 h-8 bg-electric-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-navy-900 mb-1">Customized Security Designs</h3>
+                                <p class="text-sm text-navy-500">Every property is unique. We design solutions that fit your specific needs.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-5 flex items-start gap-4">
+                            <div class="w-8 h-8 bg-electric-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-navy-900 mb-1">Reliable After-Sales Support</h3>
+                                <p class="text-sm text-navy-500">We stand behind our installations with ongoing maintenance and support.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-6 flex items-start gap-4">
+                            <div class="w-8 h-8 bg-electric-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-navy-900 mb-1">Solutions for Every Sector</h3>
+                                <p class="text-sm text-navy-500">Homes, businesses, construction developers — we protect them all.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 lg:py-28 bg-navy-950 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-electric-600/10 rounded-full blur-3xl -translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-white/10 text-electric-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:route" class="text-sm"></iconify-icon>
+                    Simple Process
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
+                    How It Works
+                </h2>
+                <p class="animate-on-scroll delay-2 text-lg text-navy-300 max-w-2xl mx-auto">
+                    Getting your property secured is easier than you think. Four simple steps to total protection.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Step 1 -->
+                <div class="animate-on-scroll delay-1 text-center relative">
+                    <div class="w-16 h-16 bg-electric-600 rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg shadow-electric-600/30">
+                        <span class="text-2xl font-bold text-white">01</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Book Free Assessment</h3>
+                    <p class="text-sm text-navy-400 leading-relaxed">Fill out our form or call us. We schedule a convenient time for you.</p>
+                    <!-- Connector line (hidden on mobile) -->
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-electric-600/50 to-transparent"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="animate-on-scroll delay-2 text-center relative">
+                    <div class="w-16 h-16 bg-electric-600/80 rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg shadow-electric-600/20">
+                        <span class="text-2xl font-bold text-white">02</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Expert Visits Your Site</h3>
+                    <p class="text-sm text-navy-400 leading-relaxed">Our security specialist assesses vulnerabilities and requirements on-site.</p>
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-electric-600/30 to-transparent"></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="animate-on-scroll delay-3 text-center relative">
+                    <div class="w-16 h-16 bg-electric-600/60 rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg shadow-electric-600/15">
+                        <span class="text-2xl font-bold text-white">03</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Customized Solution</h3>
+                    <p class="text-sm text-navy-400 leading-relaxed">Receive a tailored security plan with transparent pricing and timeline.</p>
+                    <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-electric-600/20 to-transparent"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="animate-on-scroll delay-4 text-center">
+                    <div class="w-16 h-16 bg-electric-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg shadow-electric-600/10">
+                        <span class="text-2xl font-bold text-white">04</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Installation & Support</h3>
+                    <p class="text-sm text-navy-400 leading-relaxed">Professional installation followed by ongoing maintenance and support.</p>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll delay-5 text-center mt-14">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-electric-600 hover:bg-electric-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-electric-600/30">
+                    Start With a Free Assessment
+                    <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES SECTION -->
+    <section id="industries" class="py-20 lg:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-electric-600/10 text-electric-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:building-2" class="text-sm"></iconify-icon>
+                    Industries We Protect
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-4">
+                    Security For Every Sector
+                </h2>
+                <p class="animate-on-scroll delay-2 text-lg text-navy-500 max-w-2xl mx-auto">
+                    Tailored security solutions designed for the unique challenges of each industry.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Homes -->
+                <div class="animate-on-scroll delay-1 industry-card relative rounded-2xl overflow-hidden h-72 cursor-pointer group">
+                    <img src="https://picsum.photos/seed/modern-home-kenya/500/400.jpg" alt="Home security systems" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="industry-overlay absolute inset-0 bg-electric-600/20 opacity-0"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="text-3xl mb-2">🏠</div>
+                        <h3 class="text-xl font-bold text-white mb-1">Homes</h3>
+                        <p class="text-sm text-white/70">Residential properties, apartments, and gated communities.</p>
+                    </div>
+                </div>
+
+                <!-- Businesses -->
+                <div class="animate-on-scroll delay-2 industry-card relative rounded-2xl overflow-hidden h-72 cursor-pointer group">
+                    <img src="https://picsum.photos/seed/office-building-security/500/400.jpg" alt="Business security systems" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="industry-overlay absolute inset-0 bg-electric-600/20 opacity-0"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="text-3xl mb-2">🏢</div>
+                        <h3 class="text-xl font-bold text-white mb-1">Businesses</h3>
+                        <p class="text-sm text-white/70">Offices, retail spaces, warehouses, and commercial properties.</p>
+                    </div>
+                </div>
+
+                <!-- Construction Developers -->
+                <div class="animate-on-scroll delay-3 industry-card relative rounded-2xl overflow-hidden h-72 cursor-pointer group">
+                    <img src="https://picsum.photos/seed/construction-site-secure/500/400.jpg" alt="Construction site security" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="industry-overlay absolute inset-0 bg-electric-600/20 opacity-0"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="text-3xl mb-2">🏗</div>
+                        <h3 class="text-xl font-bold text-white mb-1">Construction Developers</h3>
+                        <p class="text-sm text-white/70">Site security, material protection, and project monitoring.</p>
+                    </div>
+                </div>
+
+                <!-- Institutions -->
+                <div class="animate-on-scroll delay-4 industry-card relative rounded-2xl overflow-hidden h-72 cursor-pointer group">
+                    <img src="https://picsum.photos/seed/institution-building-kenya/500/400.jpg" alt="Institution security systems" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="industry-overlay absolute inset-0 bg-electric-600/20 opacity-0"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="text-3xl mb-2">🏛</div>
+                        <h3 class="text-xl font-bold text-white mb-1">Institutions</h3>
+                        <p class="text-sm text-white/70">Schools, hospitals, government buildings, and places of worship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="py-20 lg:py-28 bg-navy-50/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-yellow-500/10 text-yellow-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:star" class="text-sm"></iconify-icon>
+                    Client Reviews
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="animate-on-scroll delay-2 text-lg text-navy-500 max-w-2xl mx-auto">
+                    Real feedback from property owners who chose Astra Tech for their security.
+                </p>
+            </div>
+
+            <!-- Google Rating Summary -->
+            <div class="animate-on-scroll delay-1 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-0.5">
+                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-xl" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-xl" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-xl" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-xl" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-xl" style="color:#facc15"></iconify-icon>
+                    </div>
+                    <span class="text-lg font-bold text-navy-900">4.9/5</span>
+                </div>
+                <div class="hidden sm:block w-px h-6 bg-navy-200"></div>
+                <div class="flex items-center gap-2">
+                    <iconify-icon icon="logos:google-icon" class="text-lg"></iconify-icon>
+                    <span class="text-sm text-navy-500">Based on Google Reviews</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="animate-on-scroll delay-1 review-card bg-white border border-navy-100 rounded-2xl p-7">
+                    <div class="flex gap-0.5 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                    </div>
+                    <p class="text-navy-700 text-sm leading-relaxed mb-6">"Astra Tech transformed our security. We now monitor everything from anywhere — home, office, even when travelling. Their CCTV system is crystal clear and the mobile app works perfectly."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-electric-600 rounded-full flex items-center justify-center text-white font-bold text-sm">JK</div>
+                        <div>
+                            <div class="font-semibold text-navy-900 text-sm">James Kariuki</div>
+                            <div class="text-xs text-navy-500">Homeowner, Karen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="animate-on-scroll delay-2 review-card bg-white border border-navy-100 rounded-2xl p-7">
+                    <div class="flex gap-0.5 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                    </div>
+                    <p class="text-navy-700 text-sm leading-relaxed mb-6">"We needed a complete security overhaul for our office building. Astra Tech designed a system with access control, CCTV, and intercoms. Professional team, clean work, and excellent support after installation."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-sm">SM</div>
+                        <div>
+                            <div class="font-semibold text-navy-900 text-sm">Sarah Mwangi</div>
+                            <div class="text-xs text-navy-500">Operations Manager, Westlands</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="animate-on-scroll delay-3 review-card bg-white border border-navy-100 rounded-2xl p-7">
+                    <div class="flex gap-0.5 mb-4">
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                        <iconify-icon icon="lucide:star" class="text-sm" style="color:#facc15"></iconify-icon>
+                    </div>
+                    <p class="text-navy-700 text-sm leading-relaxed mb-6">"As a developer, I've used Astra Tech for 5 projects now. They understand construction site security perfectly — electric fencing, temporary CCTV, and access control for workers. Highly reliable."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-danger-500 rounded-full flex items-center justify-center text-white font-bold text-sm">DO</div>
+                        <div>
+                            <div class="font-semibold text-navy-900 text-sm">David Ochieng</div>
+                            <div class="text-xs text-navy-500">Real Estate Developer, Kilimani</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 lg:py-28 bg-white relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="animate-on-scroll inline-flex items-center gap-2 bg-electric-600/10 text-electric-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                    <iconify-icon icon="lucide:help-circle" class="text-sm"></iconify-icon>
+                    FAQ
+                </div>
+                <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-4">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+
+            <div class="space-y-3">
+                <!-- FAQ 1 -->
+                <div class="animate-on-scroll delay-1 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">How much does CCTV installation cost in Kenya?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">The cost depends on the number of cameras, type (analog vs IP), resolution, storage requirements, and whether you need remote viewing. A basic 4-camera system starts from KES 40,000, while advanced systems with 16+ IP cameras can range from KES 150,000 to KES 500,000+. We provide free site assessments to give you an accurate quote.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="animate-on-scroll delay-2 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">Do you offer electric fence installation for residential properties?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">Yes, we install electric fencing for homes, apartments, and gated communities. Our systems are safe, legal, and highly effective as a first line of defense. We handle everything from survey to installation, including energizer setup and integration with alarm systems.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="animate-on-scroll delay-3 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">Can I view my CCTV cameras on my phone?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">Absolutely. All our CCTV systems come with mobile apps that allow you to view live footage, playback recordings, and receive motion alerts directly on your smartphone from anywhere in the world. We set this up for you during installation.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="animate-on-scroll delay-4 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">What areas in Kenya do you serve?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">We are based in Nairobi but serve clients across Kenya including Mombasa, Kisumu, Nakuru, Eldoret, Thika, and surrounding areas. For large projects, we deploy teams countrywide. Contact us to confirm availability in your area.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="animate-on-scroll delay-5 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">Do you provide warranty and after-sales support?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">Yes. All our installations come with equipment warranty (typically 1-3 years depending on the product) and a workmanship guarantee. We also offer maintenance packages for ongoing support, system checks, and software updates to keep your security running optimally.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="animate-on-scroll delay-6 faq-item border border-navy-100 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left hover:bg-navy-50/50 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy-900 text-sm pr-4">How long does installation take?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="faq-chevron text-navy-400 text-lg flex-shrink-0"></iconify-icon>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="text-sm text-navy-500 leading-relaxed pb-5">A standard residential CCTV installation takes 1-2 days. More complex systems with access control, electric fencing, and networking may take 3-7 days depending on the scope. We always provide a clear timeline before starting work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / INQUIRY FORM SECTION -->
+    <section id="contact" class="py-20 lg:py-28 bg-navy-50/50 relative">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-electric-600/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Left: Contact Info -->
+                <div>
+                    <div class="animate-on-scroll inline-flex items-center gap-2 bg-electric-600/10 text-electric-600 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+                        <iconify-icon icon="lucide:mail" class="text-sm"></iconify-icon>
+                        Get In Touch
+                    </div>
+                    <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight leading-tight mb-6">
+                        Request Your Free<br>
+                        <span class="text-electric-600">Security Assessment</span>
+                    </h2>
+                    <p class="animate-on-scroll delay-2 text-lg text-navy-500 leading-relaxed mb-10">
+                        Tell us about your property and security needs. Our expert will visit your site and provide a customized security plan — completely free.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="animate-on-scroll delay-2 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-electric-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:phone" class="text-electric-600 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-sm text-navy-500 mb-0.5">Call Us</div>
+                                <a href="tel:0715135141" class="text-lg font-bold text-navy-900 hover:text-electric-600 transition-colors">0715 135 141</a>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-3 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#25D366]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:message-circle" class="text-[#25D366] text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-sm text-navy-500 mb-0.5">WhatsApp</div>
+                                <a href="https://wa.me/254715135141" target="_blank" rel="noopener" class="text-lg font-bold text-navy-900 hover:text-[#25D366] transition-colors">Chat with us</a>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-4 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-electric-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:mail" class="text-electric-600 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-sm text-navy-500 mb-0.5">Email</div>
+                                <a href="mailto:info@astratech.co.ke" class="text-lg font-bold text-navy-900 hover:text-electric-600 transition-colors">info@astratech.co.ke</a>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-5 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-electric-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:globe" class="text-electric-600 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="text-sm text-navy-500 mb-0.5">Website</div>
+                                <a href="https://www.astratech.co.ke" class="text-lg font-bold text-navy-900 hover:text-electric-600 transition-colors">www.astratech.co.ke</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="animate-on-scroll delay-2">
+                    <form id="inquiryForm" class="bg-white border border-navy-100 rounded-2xl p-7 sm:p-9 shadow-lg shadow-navy-900/5">
+                        <h3 class="text-xl font-bold text-navy-900 mb-1">Free Security Assessment</h3>
+                        <p class="text-sm text-navy-500 mb-6">Fill in your details and we'll get back to you within 24 hours.</p>
+
+                        <div class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Full Name *</label>
+                                    <input type="text" name="name" required placeholder="John Kariuki" class="w-full border border-navy-200 rounded-lg px-4 py-3 text-sm text-navy-900 placeholder-navy-300 transition-all duration-300 bg-navy-50/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Phone Number *</label>
+                                    <input type="tel" name="phone" required placeholder="0715 135 141" class="w-full border border-navy-200 rounded-lg px-4 py-3 text-sm text-navy-900 placeholder-navy-300 transition-all duration-300 bg-navy-50/50">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Email Address</label>
+                                <input type="email" name="email" placeholder="john@example.com" class="w-full border border-navy-200 rounded-lg px-4 py-3 text-sm text-navy-900 placeholder-navy-300 transition-all duration-300 bg-navy-50/50">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Property Type *</label>
+                                <select name="property_type" required class="w-full border border-navy-200 rounded-lg px-4 py-3 text-sm text-navy-900 transition-all duration-300 bg-navy-50/50 appearance-none" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2364748b%22 stroke-width=%222%22%3E%3Cpolyline points=%226 9 12 15 18 9%22%3E%3C/polyline%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center;">
+                                    <option value="" disabled selected>Select property type</option>
+                                    <option value="home">Home / Apartment</option>
+                                    <option value="office">Office / Business</option>
+                                    <option value="construction">Construction Site</option>
+                                    <option value="institution">Institution</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Services Interested In</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="cctv" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        CCTV Surveillance
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="electric_fence" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        Electric Fencing
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="access_control" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        Access Control
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="alarms" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        Intruder Alarms
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="intercom" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        Video Intercom
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm text-navy-600 hover:text-navy-900 transition-colors">
+                                        <input type="checkbox" name="services" value="biometric" class="w-4 h-4 rounded border-navy-300 text-electric-600 focus:ring-electric-600">
+                                        Biometric Security
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-navy-700 uppercase tracking-wider mb-1.5">Additional Details</label>
+                                <textarea name="message" rows="3" placeholder="Tell us about your property and security needs..." class="w-full border border-navy-200 rounded-lg px-4 py-3 text-sm text-navy-900 placeholder-navy-300 transition-all duration-300 bg-navy-50/50 resize-none"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full mt-6 bg-electric-600 hover:bg-electric-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-electric-600/25 flex items-center justify-center gap-2 text-sm">
+                            <iconify-icon icon="lucide:shield-check"></iconify-icon>
+                            REQUEST FREE ASSESSMENT
+                        </button>
+                        <p class="text-xs text-navy-400 text-center mt-3">We respect your privacy. No spam, ever.</p>
+
+                        <!-- Success Message -->
+                        <div id="formSuccess" class="hidden mt-4 bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                            <iconify-icon icon="lucide:check-circle-2" class="text-green-500 text-2xl mb-1"></iconify-icon>
+                            <p class="text-sm font-semibold text-green-800">Thank you! We'll contact you within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRONG CTA SECTION -->
+    <section class="relative py-20 lg:py-28 bg-navy-950 overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-electric-600/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-danger-500/10 border border-danger-500/20 text-danger-400 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-8">
+                    <iconify-icon icon="lucide:alert-triangle" class="text-sm"></iconify-icon>
+                    Don't Wait
+                </div>
+            </div>
+            <h2 class="animate-on-scroll delay-1 text-3xl sm:text-4xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                DON'T WAIT UNTIL SECURITY BECOMES AN EMERGENCY.
+            </h2>
+            <p class="animate-on-scroll delay-2 text-xl text-navy-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Protect what matters today. Every day without proper security is a risk you can't afford.
+            </p>
+            <div class="animate-on-scroll delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:0715135141" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 cta-shimmer text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-sm sm:text-base">
+                    <iconify-icon icon="lucide:phone" class="text-lg"></iconify-icon>
+                    CALL NOW: 0715 135 141
+                </a>
+                <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-navy-900 font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-sm sm:text-base">
+                    <iconify-icon icon="lucide:clipboard-check" class="text-lg"></iconify-icon>
+                    REQUEST FREE SURVEY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-5">
+                        <div class="w-10 h-10 bg-electric-600 rounded-lg flex items-center justify-center">
+                            <iconify-icon icon="lucide:shield-check" class="text-white text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold tracking-tight text-white">ASTRA</span>
+                            <span class="text-lg font-light tracking-tight text-electric-400">TECH</span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-navy-400 leading-relaxed mb-5">
+                        Smart security solutions for homes, businesses, and developments across Kenya. Secure Today. Protect Tomorrow.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-electric-600 border border-white/10 rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Facebook">
+                            <iconify-icon icon="lucide:facebook" class="text-white text-sm"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-electric-600 border border-white/10 rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Instagram">
+                            <iconify-icon icon="lucide:instagram" class="text-white text-sm"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-electric-600 border border-white/10 rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Twitter">
+                            <iconify-icon icon="lucide:twitter" class="text-white text-sm"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/5 hover:bg-electric-600 border border-white/10 rounded-lg flex items-center justify-center transition-all duration-300" aria-label="LinkedIn">
+                            <iconify-icon icon="lucide:linkedin" class="text-white text-sm"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">CCTV Surveillance</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Electric Fencing</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Access Control</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Video Intercom</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Intruder Alarms</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Biometric Security</a></li>
+                        <li><a href="#services" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Networking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#why-us" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">About Us</a></li>
+                        <li><a href="#industries" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Industries</a></li>
+                        <li><a href="#reviews" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Reviews</a></li>
+                        <li><a href="#faq" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:phone" class="text-electric-400 text-sm mt-0.5 flex-shrink-0"></iconify-icon>
+                            <a href="tel:0715135141" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">0715 135 141</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:mail" class="text-electric-400 text-sm mt-0.5 flex-shrink-0"></iconify-icon>
+                            <a href="mailto:info@astratech.co.ke" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">info@astratech.co.ke</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:globe" class="text-electric-400 text-sm mt-0.5 flex-shrink-0"></iconify-icon>
+                            <a href="https://www.astratech.co.ke" class="text-sm text-navy-400 hover:text-electric-400 transition-colors">www.astratech.co.ke</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:map-pin" class="text-electric-400 text-sm mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-sm text-navy-400">Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:message-circle" class="text-[#25D366] text-sm mt-0.5 flex-shrink-0"></iconify-icon>
+                            <a href="https://wa.me/254715135141" target="_blank" rel="noopener" class="text-sm text-[#25D366] hover:text-[#20bd5a] transition-colors">Chat on WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-navy-500">&copy; 2025 Astra Tech. All rights reserved.</p>
+                <p class="text-xs text-navy-600">Smart Security Solutions in Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/254715135141?text=Hello%20Astra%20Tech,%20I%20need%20security%20solutions." target="_blank" rel="noopener" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/30 transition-all duration-300 hover:scale-110" aria-label="Chat on WhatsApp">
+        <iconify-icon icon="lucide:message-circle" class="text-white text-2xl"></iconify-icon>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Hero load animation
+        window.addEventListener('load', () => {
+            document.getElementById('hero').classList.add('hero-loaded');
+        });
+
+        // Scroll animations (Intersection Observer)
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const menuIcon = document.getElementById('menuIcon');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+                menuIcon.setAttribute('icon', 'lucide:x');
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+                menuIcon.setAttribute('icon', 'lucide:menu');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+                menuIcon.setAttribute('icon', 'lucide:menu');
+            });
+        });
+
+        // Navbar scroll behavior
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // FAQ toggle
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const chevron = btn.querySelector('.faq-chevron');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-chevron').forEach(c => c.classList.remove('rotated'));
+
+            // Toggle current
+            if (!isOpen) {
+                answer.classList.add('open');
+                chevron.classList.add('rotated');
+            }
+        }
+
+        // Form submission
+        const form = document.getElementById('inquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formSuccess = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulate submission
+            submitBtn.innerHTML = '<iconify-icon icon="lucide:loader-2" class="animate-spin"></iconify-icon> SENDING...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                submitBtn.innerHTML = '<iconify-icon icon="lucide:check-circle-2"></iconify-icon> SENT SUCCESSFULLY';
+                submitBtn.classList.remove('opacity-75');
+                submitBtn.classList.remove('bg-electric-600');
+                submitBtn.classList.add('bg-green-600');
+                formSuccess.classList.remove('hidden');
+
+                // Reset form
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.innerHTML = '<iconify-icon icon="lucide:shield-check"></iconify-icon> REQUEST FREE ASSESSMENT';
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('bg-green-600');
+                    submitBtn.classList.add('bg-electric-600');
+                }, 4000);
+            }, 1500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
